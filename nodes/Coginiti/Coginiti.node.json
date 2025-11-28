@@ -1,0 +1,18 @@
+{
+	"node": "@coginiti/n8n-nodes-coginiti",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": [ "Data & Storage" ],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://support.coginiti.co/hc/articles/18723746168087-Managing-Personal-Access-Tokens"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://support.coginiti.co/hc/categories/18554190258711-API"
+			}
+		]
+	}
+}
