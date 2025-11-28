@@ -1,0 +1,74 @@
+{
+  "name": "@coginiti/n8n-nodes-coginiti",
+  "version": "1.1.0",
+  "description": "n8n community node to work with the Example API",
+  "license": "MIT",
+  "homepage": "https://coginiti.co",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "n8n-nodes",
+    "n8n-integration",
+    "coginiti",
+    "coginiti-api",
+    "coginitiScript",
+    "data-operations",
+    "sql",
+    "data-analytics",
+    "data-transformation",
+    "etl",
+    "elt",
+    "data-catalog",
+    "query-execution",
+    "database-operations",
+    "data-engineering",
+    "data-science",
+    "business-intelligence",
+    "bi-tools",
+    "analytics-platform"
+  ],
+  "author": {
+    "name": "Dmitrij Kosmakov",
+    "email": "dkosmakov@coginiti.co"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coginiti-dev/n8n-nodes-coginiti"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease",
+    "dk:link": "npm link && cd /Users/dk/.n8n/custom && npm link @coginiti/n8n-nodes-coginiti && echo 'Successfully linked!'"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/CoginitiApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Coginiti/Coginiti.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "*",
+    "@types/node": "^24.10.0",
+    "eslint": "9.32.0",
+    "prettier": "3.6.2",
+    "release-it": "^19.0.4",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
