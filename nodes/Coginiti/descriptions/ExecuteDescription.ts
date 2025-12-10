@@ -107,48 +107,12 @@ export const executeFields: INodeProperties[] = [
 	},
 
 	// ----------------------------------------
-	// Parameters Mode Selector
+	// Arguments
 	// ----------------------------------------
 	{
-		displayName: 'Parameters Mode',
-		name: 'modeParams',
-		type: 'options',
-		noDataExpression: true,
-		displayOptions: {
-			show: {
-				resource: ['execute'],
-				operation: ['executeScript', 'executeBlock'],
-			},
-		},
-		options: [
-			{
-				name: 'Manual',
-				value: 'manual',
-				description: 'Add parameters one by one',
-			},
-			{
-				name: 'JSON',
-				value: 'json',
-				description: 'Provide parameters as JSON object',
-			},
-		],
-		default: 'manual',
-		description: 'How to specify parameters',
-	},
-
-	// ----------------------------------------
-	// Parameters Mode
-	// ----------------------------------------
-	...executeParamsDescritions.blockJson,
-	...executeParamsDescritions.blockManual,
-	...executeParamsDescritions.scriptJson,
-	...executeParamsDescritions.scriptManual,
-
-
-	// ----------------------------------------
-	// Arguments Mode (only for executeBlock)
-	// ----------------------------------------
-	{
+		// ----------------------------------------
+		// Arguments Mode Selector (only for executeBlock)
+		// ----------------------------------------
 		displayName: 'Arguments Mode',
 		name: 'modeArguments',
 		type: 'options',
@@ -174,9 +138,46 @@ export const executeFields: INodeProperties[] = [
 		default: 'manual',
 		description: 'How to specify arguments',
 	},
-
 	...executeArgumentsDescriptions.blockJson,
 	...executeArgumentsDescriptions.scriptJson,
+
+	// ----------------------------------------
+	// Parameters
+	// ----------------------------------------
+	{
+		// ----------------------------------------
+		// Parameters Mode Selector
+		// ----------------------------------------
+		displayName: 'Parameters Mode',
+		name: 'modeParams',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['execute'],
+				operation: ['executeScript', 'executeBlock'],
+			},
+		},
+		options: [
+			{
+				name: 'Manual',
+				value: 'manual',
+				description: 'Add parameters one by one',
+			},
+			{
+				name: 'JSON',
+				value: 'json',
+				description: 'Provide parameters as JSON object',
+			},
+		],
+		default: 'manual',
+		description: 'How to specify parameters',
+	},
+	...executeParamsDescritions.blockJson,
+	...executeParamsDescritions.blockManual,
+	...executeParamsDescritions.scriptJson,
+	...executeParamsDescritions.scriptManual,
+
 
 	// ----------------------------------------
 	// Other fields

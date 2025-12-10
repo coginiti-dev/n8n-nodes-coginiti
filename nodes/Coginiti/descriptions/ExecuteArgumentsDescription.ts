@@ -6,7 +6,7 @@ export const blockJson: INodeProperties[] = [
 	// ----------------------------------------
 	{
 		displayName: 'Arguments',
-		name: 'descriptionArgumentsBlockJson',
+		name: 'argumentsBlockJson',
 		type: 'json',
 		displayOptions: {
 			show: {
@@ -32,7 +32,7 @@ export const scriptJson: INodeProperties[] = [
 	// ----------------------------------------
 	{
 		displayName: 'Arguments',
-		name: 'descriptionArgumentsBlockManual',
+		name: 'argumentsBlockManual',
 		type: 'assignmentCollection',
 		displayOptions: {
 			show: {

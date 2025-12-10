@@ -62,13 +62,13 @@ export async function execute(
 		const modeParams = this.getNodeParameter('modeParams', itemIndex, 'manual') as ExecuteMode;
 		if (modeParams === 'manual') {
 			const assignmentCollection = this.getNodeParameter(
-				'assignmentsParams',
+				'paramsScriptManual',
 				itemIndex,
 				{},
 			) as AssignmentCollectionValue;
 			body.params = convertAssignmentCollectionToObject(assignmentCollection);
 		} else {
-			const params = this.getNodeParameter('executeParams', itemIndex, '{}') as string;
+			const params = this.getNodeParameter('paramsScriptJson', itemIndex, '{}') as string;
 			body.params = parseJsonParameter(this, params, 'Parameters');
 		}
 	} else if (operation === 'executeBlock') {
@@ -80,13 +80,13 @@ export async function execute(
 		const modeParams = this.getNodeParameter('modeParams', itemIndex, 'manual') as string;
 		if (modeParams === 'manual') {
 			const assignmentCollection = this.getNodeParameter(
-				'assignmentsParams',
+				'paramsBlockManual',
 				itemIndex,
 				{},
 			) as AssignmentCollectionValue;
 			body.params = convertAssignmentCollectionToObject(assignmentCollection);
 		} else {
-			const params = this.getNodeParameter('executeParams', itemIndex, '{}') as string;
+			const params = this.getNodeParameter('paramsBlockJson', itemIndex, '{}') as string;
 			body.params = parseJsonParameter(this, params, 'Parameters');
 		}
 
@@ -94,13 +94,14 @@ export async function execute(
 		const argsMode = this.getNodeParameter('modeArguments', itemIndex, 'manual') as string;
 		if (argsMode === 'manual') {
 			const assignmentCollection = this.getNodeParameter(
-				'assignmentsArguments',
+				'argumentsBlockManual',
 				itemIndex,
 				{},
 			) as AssignmentCollectionValue;
+			console.log('Assignment Collection Arguments:', assignmentCollection);
 			body.args = convertAssignmentCollectionToObject(assignmentCollection);
 		} else {
-			const args = this.getNodeParameter('arguments', itemIndex, '{}') as string;
+			const args = this.getNodeParameter('argumentsBlockJson', itemIndex, '{}') as string;
 			body.args = parseJsonParameter(this, args, 'Arguments');
 		}
 	}
@@ -121,6 +122,7 @@ export async function execute(
 	}
 
 	// Make API request using centralized wrapper
+	console.log('Request Body:', body);
 	const response = await coginitiApiRequest.call(
 		this,
 		'POST',

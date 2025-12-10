@@ -6,7 +6,7 @@ export const scriptJson: INodeProperties[] = [
 	// ----------------------------------------
 	{
 		displayName: 'Parameters',
-		name: 'descriptionParamsScriptJson',
+		name: 'paramsScriptJson',
 		type: 'json' as NodePropertyTypes,
 		displayOptions: {
 			show: {
@@ -32,7 +32,7 @@ export const blockJson: INodeProperties[] = [
 	// ----------------------------------------
 	{
 		displayName: 'Parameters',
-		name: 'descriptionParamsBlockJson',
+		name: 'paramsBlockJson',
 		type: 'json' as NodePropertyTypes,
 		displayOptions: {
 			show: {
@@ -58,7 +58,7 @@ export const scriptManual: INodeProperties[] = [
 	// ----------------------------------------
 	{
 		displayName: 'Parameters',
-		name: 'descriptionParamsScriptManual',
+		name: 'paramsScriptManual',
 		type: 'assignmentCollection',
 		displayOptions: {
 			show: {
@@ -79,7 +79,7 @@ export const blockManual: INodeProperties[] = [
 	// ----------------------------------------
 	{
 		displayName: 'Parameters',
-		name: 'descriptionParamsBlockManual',
+		name: 'paramsBlockManual',
 		type: 'assignmentCollection',
 		displayOptions: {
 			show: {
