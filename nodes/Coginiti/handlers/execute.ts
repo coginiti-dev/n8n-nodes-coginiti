@@ -98,7 +98,6 @@ export async function execute(
 				itemIndex,
 				{},
 			) as AssignmentCollectionValue;
-			console.log('Assignment Collection Arguments:', assignmentCollection);
 			body.args = convertAssignmentCollectionToObject(assignmentCollection);
 		} else {
 			const args = this.getNodeParameter('argumentsBlockJson', itemIndex, '{}') as string;
@@ -122,7 +121,6 @@ export async function execute(
 	}
 
 	// Make API request using centralized wrapper
-	console.log('Request Body:', body);
 	const response = await coginitiApiRequest.call(
 		this,
 		'POST',
